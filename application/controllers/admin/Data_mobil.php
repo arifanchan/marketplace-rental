@@ -139,5 +139,29 @@ class Data_mobil extends CI_Controller{
 		$this->form_validation->set_rules('warna','Warna','required');
 		$this->form_validation->set_rules('status','Status','required');
 	}
+    public function detail_mobil($id){
+
+		$data['detail'] = $this->rental_model->ambil_id_mobil($id);
+		$data['type'] = $this->rental_model->get_data('type')->result();
+
+		$this->load->view('templates_admin/header');
+		$this->load->view('templates_admin/sidebar');
+		$this->load->view('admin/detail_mobil',$data);
+		$this->load->view('templates_admin/footer');
+
+	}
+    public function delete_mobil($id){
+
+		$where = array('id_mobil' => $id);
+		$this->rental_model->delete_data($where,'mobil');
+
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				Data Mobil Berhasil Dihapus
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>');
+		redirect('admin/data_mobil');
+	}
 
 }

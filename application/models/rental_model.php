@@ -10,5 +10,8 @@ class Rental_model extends CI_Model
     {
         $this->db->insert($table, $data);
     }
+    public function update_data($table, $data, $where){
+        $this->db->update($table, $data, $where);
+    }		
 }
 ?>

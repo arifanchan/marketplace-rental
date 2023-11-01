@@ -47,6 +47,7 @@
 
               <li><a class="nav-link" href="<?php echo base_url('auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
 
+              
             </ul>
         </aside>
       </div>

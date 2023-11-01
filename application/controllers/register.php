@@ -39,8 +39,6 @@
 				  </button>
 				</div>');
 				redirect('auth/login');
-
-
 			}
 
 

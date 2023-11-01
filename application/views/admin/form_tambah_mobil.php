@@ -39,8 +39,56 @@
         					<?php echo form_error('warna','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
+                        <div class="form-group">
+                            <label>AC</label>
+                            <select name="ac" class="form-control">
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                                <?php echo form_error('ac','<div class="text-small text-danger">','</div>') ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Supir</label>
+                            <select name="supir" class="form-control">
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                                <?php echo form_error('supir','<div class="text-small text-danger">','</div>') ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>MP3 Player</label>
+                            <select name="mp3_player" class="form-control">
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                                <?php echo form_error('mp3_player','<div class="text-small text-danger">','</div>') ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Central Lock</label>
+                            <select name="central_lock" class="form-control">
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                                <?php echo form_error('central_lock','<div class="text-small text-danger">','</div>') ?>
+                            </select>
+                        </div>
+
         			</div>
         			<div class="col-md-6">
+
+                        <div class="form-group">
+                            <label>Harga Sewa/Hari</label>
+                            <input type="number" name="harga" class="form-control">
+                            <?php echo form_error('harga','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Denda</label>
+                            <input type="number" name="denda" class="form-control">
+                            <?php echo form_error('denda','<div class="text-small text-danger">','</div>') ?>
+                        </div>
 
         				<div class="form-group">
         					<label>Tahun</label>
@@ -57,6 +105,18 @@
         					</select>
         					<?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
         				</div>
+
+                        <div class="form-group">
+                            <label>Pemilik Rental</label>
+                            <select name="nama_rental" class="form-control">
+                                <option value="">--Pilih Pemilik--</option>
+                                <?php foreach ($nama_rental as $nr) :?>
+                                    <option value="<?php echo $nr->nama_rental?>"><?php echo $nr->nama_rental?></option>
+                                <?php endforeach ?>
+
+                            </select>
+                            <?php echo form_error('nama_rental','<div class="text-small text-danger">','</div>') ?>
+                        </div>
 
         				<div class="form-group">
         					<label>Gambar</label>

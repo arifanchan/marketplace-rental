@@ -17,6 +17,7 @@
 					<th>Tanggal Rental</th>
 					<th>Tanggal Kembali</th>
 					<th>Action</th>
+					<!-- <th>Batal</th> -->
 				</tr>
 
 				<?php $no = 1; foreach($transaksi as $tr) : ?>
@@ -37,10 +38,15 @@
 							<?php } else { ?>
 
 								<a href="<?php echo base_url('customer/transaksi/pembayaran/' . $tr->id_rental) ?>" class="btn btn-sm btn-success">Pembayaran</a>
-								
+
+								<a onclick="return confirm('Anda yakin membatalkan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/' . $tr->id_rental) ?>">Batal</a>
+
 							<?php } ?>
 
 						</td>
+						<!-- <td>
+							<a onclick="return confirm('Anda yakin membatalkan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/' . $tr->id_rental) ?>">Batal</a>
+						</td> -->
 					</tr>
 
 				<?php endforeach; ?>

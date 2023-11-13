@@ -44,7 +44,7 @@
 							<?php } ?>
 
 						</td>
-						<!-- <td>
+<!-- 						<td>
 							<a onclick="return confirm('Anda yakin membatalkan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/' . $tr->id_rental) ?>">Batal</a>
 						</td> -->
 					</tr>

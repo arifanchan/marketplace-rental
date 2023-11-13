@@ -68,8 +68,7 @@
 							
 							<center>
 
-
-								<?php if($tr->status_pembayaran == "1") { ?>
+							<?php if($tr->status_pembayaran == "1") { ?>
 											<a class="btn btn-sm btn-primary text-white" ><i class="fas fa-check-circle"></i></a>
 								<?php }else{ ?>
 									<?php 
@@ -83,7 +82,6 @@
 
 									<?php } ?>
 								<?php } ?>
-								
 								
 
 							</center>

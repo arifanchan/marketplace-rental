@@ -53,10 +53,73 @@
                                 </tr>
 
                                 <tr>
+                                    <td>Harga</td>
+                                    <td>Rp. <?php echo number_format($dt->harga,0,',','.') ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Denda</td>
+                                    <td>Rp. <?php echo number_format($dt->denda,0,',','.')?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pemilik</td>
+                                    <td><?php echo $dt->nama_rental?></td>
+                                </tr>
+
+                                <tr>
                                     <td>Status</td>
                                     <td>
                                         <?php 
                                             if($dt->status == "0"){
+                                                echo "<span class='badge badge-danger'> Tidak Tersedia </span>";
+                                            }else{
+                                                echo "<span class='badge badge-primary'>Tersedia </span>";
+                                            }
+                                        ?>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AC</td>
+                                    <td>
+                                        <?php 
+                                            if($dt->ac == "0"){
+                                                echo "<span class='badge badge-danger'> Tidak Tersedia </span>";
+                                            }else{
+                                                echo "<span class='badge badge-primary'>Tersedia </span>";
+                                            }
+                                        ?>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Supir</td>
+                                    <td>
+                                        <?php 
+                                            if($dt->supir == "0"){
+                                                echo "<span class='badge badge-danger'> Tidak Tersedia </span>";
+                                            }else{
+                                                echo "<span class='badge badge-primary'>Tersedia </span>";
+                                            }
+                                        ?>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>MP3 Player</td>
+                                    <td>
+                                        <?php 
+                                            if($dt->mp3_player == "0"){
+                                                echo "<span class='badge badge-danger'> Tidak Tersedia </span>";
+                                            }else{
+                                                echo "<span class='badge badge-primary'>Tersedia </span>";
+                                            }
+                                        ?>    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Central Lock</td>
+                                    <td>
+                                        <?php 
+                                            if($dt->central_lock == "0"){
                                                 echo "<span class='badge badge-danger'> Tidak Tersedia </span>";
                                             }else{
                                                 echo "<span class='badge badge-primary'>Tersedia </span>";

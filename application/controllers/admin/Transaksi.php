@@ -12,6 +12,8 @@
 			$this->load->view('admin/Data_transaksi',$data);
 			$this->load->view('templates_admin/footer');
 		}
+
+
 		public function pembayaran($id){
 			$this->rental_model->admin_login();
 			$where = array('id_rental' => $id);
@@ -22,6 +24,7 @@
 			$this->load->view('templates_admin/footer');
 
 		}
+
 		public function cek_pembayaran(){
 			$this->rental_model->admin_login();
 			$id 				= $this->input->post('id_rental');
@@ -45,6 +48,8 @@
 				</div>');
 				redirect('admin/transaksi');
 		}
+
+
 		public function download_pembayaran($id){
 			$this->rental_model->admin_login();
 			$this->load->helper('download');
@@ -52,5 +57,10 @@
 			$file = 'assets/upload/' . $filePembayaran['bukti_pembayaran'];
 			force_download($file, NULL);
 		}
-  }
+
+
+
+		
+	}
+
 ?>

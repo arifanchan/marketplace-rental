@@ -9,6 +9,7 @@
 			$this->load->view('customer/transaksi',$data);
 			$this->load->view('templates_customer/footer');
 		}
+
 		public function pembayaran($id){
 			$data['transaksi'] = $this->db->query("SELECT * FROM transaksi tr, mobil mb, customer cs WHERE tr.id_mobil=mb.id_mobil AND tr.id_rental='$id' AND cs.nama_rental = tr.nama_rental ORDER BY id_rental DESC")->result();
 
@@ -19,6 +20,7 @@
 			$this->load->view('customer/pembayaran',$data);
 			$this->load->view('templates_customer/footer');
 		}
+
 		public function pembayaran_aksi(){
 			$id 				= $this->input->post('id_rental');
 			$bukti_pembayaran	= $_FILES['bukti_pembayaran']['name'];
@@ -56,5 +58,20 @@
 			redirect('customer/transaksi');
 
 		}
-    }
+
+		public function cetak_invoice($id){
+			$data['transaksi'] = $this->db->query("SELECT * FROM transaksi tr, mobil mb, customer cs WHERE tr.id_mobil=mb.id_mobil AND tr.id_customer=cs.id_customer AND tr.id_rental='$id'")->result();
+
+			$data['nama_rental'] = $this->db->query("SELECT nama_rental FROM transaksi WHERE id_rental = '$id'")->result();
+
+			$nama_rental = $data['nama_rental'][0]->nama_rental;
+			$data['payment']	= $this->db->query("SELECT * FROM payment WHERE nama_rental = '$nama_rental'")->result();
+			$data['rental']		= $this->db->query("SELECT * FROM customer WHERE nama_rental = '$nama_rental'")->result();
+
+			$this->load->view('customer/cetak_invoice',$data);
+		}
+
+		
+	}
+
 ?>

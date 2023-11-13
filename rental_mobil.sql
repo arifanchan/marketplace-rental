@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2023 at 11:46 PM
+-- Generation Time: Jul 01, 2023 at 03:53 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -59,11 +59,11 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id_customer`, `nama`, `nama_rental`, `username`, `alamat`, `gender`, `no_telp`, `no_ktp`, `password`, `role_id`) VALUES
 (6, 'Admin', '', 'admin', 'admin', 'Laki-laki', '000', '000', '21232f297a57a5a743894a0e4a801fc3', 1),
-(9, 'Arifa Chan', '', 'arifa', 'Bogor', 'Laki-laki', '081266774667', '1401022104901263', 'be5f0c2d70d900bd491123d7b1eac072', 2),
-(20, 'Brandon Jevri Wanta', '', 'brandon', 'Bogor', 'Laki-laki', '081266722465', '657565', 'fc275ac3498d6ab0f0b4389f8e94422c', 2),
-(21, 'Muh. Arif Idris', 'Sahabat Travel', 'arif', 'Bandung', 'Laki-laki', '081252547511', '10246979', '0ff6c3ace16359e41e37d40b8301d67f', 3),
+(9, 'Edi Waluyo', '', 'edi', 'Bogor', 'Laki-laki', '081266774667', '1401022104901263', '8457dff5491b024de6b03e30b609f7e8', 2),
+(20, 'Herlina Sigalingging', '', 'herllina', 'Bogor', 'Perempuan', '081266722465', '657565', '4e196a6c133a04f8a81d742b04e7ffe7', 2),
+(21, 'Muspik', 'Sahabat Travel', 'muspik', 'Bandung', 'Laki-laki', '081252547511', '10246979', '700dbc31df18484f604bd01613dac5f3', 3),
 (22, 'Prilly Alda', 'Permata Travel', 'prilly', 'Yogyakarta', 'Perempuan', '081266521145', '4984798', 'c43ce00fbdfb54a6cd0a1b6b86489093', 3),
-(23, 'Fitri Meliani', 'Putra Bogor Travel', 'fimel', 'Bogor', 'Perempuan', '081322471446', '794651614', '52087bf698ce36d5be293979a5cddf5d', 3);
+(23, 'Felbi Humaida', 'Putra Bogor Travel', 'felbi', 'Bogor', 'Perempuan', '081322471446', '794651614', '0d0dfb3ed17e4638e50ceda779694139', 3);
 
 -- --------------------------------------------------------
 

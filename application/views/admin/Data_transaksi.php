@@ -15,6 +15,7 @@
 				<th>Tgl. Kembali</th>
 				<th>Harga/Hari</th>
 				<th>Denda/Hari</th>
+				<th>Total Denda</th>
 				<th>Tgl. Dikembalikan</th>
 				<th>Status Pengembalian</th>
 				<th>Status Rental</th>
@@ -31,6 +32,8 @@
 						<td><?php echo date('d/m/Y', strtotime($tr->tanggal_rental ))?></td>
 						<td><?php echo date('d/m/Y', strtotime($tr->tanggal_kembali ))?></td>
 						<td>Rp. <?php echo number_format($tr->harga,0,',','.')?></td>
+						<td>Rp. <?php echo number_format($tr->denda,0,',','.')?></td>
+						<td>Rp. <?php echo number_format($tr->total_denda,0,',','.')?></td>
 						<td>
 							<?php 
 								if($tr->tanggal_pengembalian=="0000-00-00"){

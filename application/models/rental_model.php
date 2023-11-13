@@ -44,5 +44,15 @@ class Rental_model extends CI_Model
             return FALSE;
         }
     }	
+    public function update_password($where, $data, $table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    
+    }
+
+    public function downloadPembayaran($id){
+        $query = $this->db->get_where('transaksi',array('id_rental' => $id));
+        return $query->row_array();
+    }
 }
 ?>

@@ -7,7 +7,7 @@
                         <div class="display-table">
                             <div class="display-table-cell">
                                 <h1>SELAMAT DATANG!</h1>
-                                <p>RENTAL MOBIL TERBAIK SE-INDONESIA<br>HARGA BERSAHABAT, KUALITAS PALING MANTAP</p>
+                                <p>MARKETPLACE RENTAL MOBIL TERBAIK SE-INDONESIA<br>HARGA BERSAHABAT, KUALITAS PALING MANTAP</p>
 
 
                             </div>

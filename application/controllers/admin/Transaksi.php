@@ -77,7 +77,16 @@
 			$status_pengembalian	= $this->input->post('status_pengembalian');
 			$tanggal_kembali		= $this->input->post('tanggal_kembali');
 			$denda					= $this->input->post('denda');
-
+			
+			if (($tanggal_pengembalian == '') or ($tanggal_pengembalian < $tanggal_kembali)) {
+				$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							  Tanggal pengembalian tidak boleh lebih kecil dari tanggal rental!
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>');
+							redirect('admin/transaksi/transaksi_selesai/' . $this->input->post('id_rental'));
+			}
 			$x						= strtotime($tanggal_pengembalian);
 			$y						= strtotime($tanggal_kembali);
 			$selisih				= abs($x - $y)/(60*60*24);

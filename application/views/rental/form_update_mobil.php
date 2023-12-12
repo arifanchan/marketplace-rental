@@ -42,7 +42,13 @@
         					<?php echo form_error('warna','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
-                        <div class="form-group">
+        				<div class="form-group">
+        					<label>Gambar</label>
+        					<input type="file" name="gambar" class="form-control">
+        				</div>
+                        
+
+                        <!-- <div class="form-group">
                             <label>AC</label>
                             <select name="ac" class="form-control">
                                 <option <?php if($mb->ac == 1){echo "selected='selected'";}
@@ -89,21 +95,7 @@
                                     echo $mb->central_lock;?> value="0">Tidak Tersedia</option>
                             </select>
                             <?php echo form_error('central_lock','<div class="text-small text-danger">','</div>') ?>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label>Status</label>
-                            <select name="status" class="form-control">
-                                <option <?php if($mb->status == 1){echo "selected='selected'";}
-                                    echo $mb->status;?> value="1">Tersedia</option>
-
-                                <option <?php if($mb->status == 0){echo "selected='selected'";}
-                                    echo $mb->status;?> value="0">Tidak Tersedia</option>
-                            </select>
-                            <?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
-                        </div>
-
+                        </div> -->
 
 
         			</div>
@@ -123,11 +115,11 @@
 
         				<div class="form-group">
         					<label>Tahun</label>
-        					<input type="text" name="tahun" class="form-control" value="<?php echo $mb->warna ?>">
+        					<input type="number" name="tahun" class="form-control" value="<?php echo $mb->tahun ?>">
         					<?php echo form_error('tahun','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
-        				<div class="form-group">
+        				<!-- <div class="form-group">
         					<label>Status</label>
         					<select name="status" class="form-control">
         						<option <?php if($mb->status == 1){echo "selected='selected'";}
@@ -137,13 +129,46 @@
         							echo $mb->status;?> value="0">Tidak Tersedia</option>
         					</select>
         					<?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
-        				</div>
+        				</div> -->
 
-        				<div class="form-group">
-        					<label>Gambar</label>
-        					<input type="file" name="gambar" class="form-control">
-        				</div>
+                        <div class="form-group">
+                            <label>Pemilik Rental</label>
+                            <input name="nama_rental" value="<?php echo $this->session->userdata('nama_rental') ?>" class="form-control" disabled>
+                        </div>
 
+                        <div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="ac" class="form-check-input" value="1" <?php if($mb->ac == 1){echo "checked";}?>>AC
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="central_lock" class="form-check-input" value="1" <?php if($mb->central_lock == 1){echo "checked";}?>>Central Lock
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="mp3_player" class="form-check-input" value="1" <?php if($mb->mp3_player == 1){echo "checked";}?>>MP3 Player
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="supir" class="form-check-input" value="1" <?php if($mb->supir == 1){echo "checked";}?>>Supir
+  </label>
+</div>
+<div><br></div>
+                        <div class="form-check-inline">
+                                <label class="form-check-label">
+                                Status<br>
+                                    <input type="radio" class="form-check-input" name="status" value="1" <?php if ($mb->status == 1) {
+                                            echo "checked";
+                                        } ?>>Tersedia
+                                        <input type="radio" class="form-check-input" name="status" value="0" <?php if ($mb->status == 0) {
+                                            echo "checked";
+                                        } ?>>Tidak Tersedia
+                                    </label>
+                                </div>
+                                <div><br></div>
         				<button type="submit" class="btn btn-primary">Simpan</button>
         				<button type="reset" class="btn btn-danger">Reset</button>
         			</div>

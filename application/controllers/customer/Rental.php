@@ -2,7 +2,12 @@
 
 class Rental extends CI_Controller
 {
-	
+	public function __construct() {
+		parent::__construct();
+		if ($this->session->userdata('role_id') == '3') {
+			redirect('rental/dashboard');
+		}
+	}
 	public function tambah_rental($id)
 	{
 		
@@ -30,10 +35,21 @@ class Rental extends CI_Controller
 		$id_mobil 			= $this->input->post('id_mobil');
 		$nama_rental		= $this->input->post('nama_rental');
 		$tanggal_rental 	= $this->input->post('tanggal_rental');
+		// $durasi				= $this->input->post('durasi');
+		// $tanggal_kembali 	= $this->input->post(date('Y-m-d', strtotime($tanggal_rental. ' +2 days')));
 		$tanggal_kembali 	= $this->input->post('tanggal_kembali');
 		$denda 				= $this->input->post('denda');
 		$harga 				= $this->input->post('harga');
 
+		if (($tanggal_rental == '') or ($tanggal_kembali < $tanggal_rental)) {
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  Tanggal kembali tidak boleh lebih kecil dari tanggal rental!
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>');
+					redirect('customer/rental/tambah_rental/' . $this->input->post('id_mobil'));
+				}else{
 		$data = array(
 			'id_customer'			=> $id_customer,
 			'id_mobil'				=> $id_mobil,
@@ -46,6 +62,7 @@ class Rental extends CI_Controller
 			'status_rental'			=> 'Belum Selesai',
 			'status_pengembalian'	=> 'Belum Kembali'
 		);
+		}
 
 		$this->rental_model->insert_data($data, 'transaksi');
 		$status = array('status' => '0');

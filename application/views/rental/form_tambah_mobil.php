@@ -22,7 +22,7 @@
         					<?php echo form_error('kode_type','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
-        				<div class="form-group">
+						<div class="form-group">
         					<label>Merk</label>
         					<input type="text" name="merk" class="form-control">
         					<?php echo form_error('merk','<div class="text-small text-danger">','</div>') ?>
@@ -40,7 +40,40 @@
         					<?php echo form_error('warna','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
+        				<div class="form-group">
+        					<label>Gambar</label>
+        					<input type="file" name="gambar" class="form-control">
+        				</div>
+
+
+        			</div>
+        			<div class="col-md-6">
+
                         <div class="form-group">
+                            <label>Harga Sewa/Hari</label>
+                            <input type="number" name="harga" class="form-control">
+                            <?php echo form_error('harga','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Denda</label>
+                            <input type="number" name="denda" class="form-control">
+                            <?php echo form_error('denda','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+        				<div class="form-group">
+        					<label>Tahun</label>
+        					<input type="number" name="tahun" class="form-control">
+        					<?php echo form_error('tahun','<div class="text-small text-danger">','</div>') ?>
+        				</div>
+
+
+                        <div class="form-group">
+                            <label>Pemilik Rental</label>
+                            <input name="nama_rental" value="<?php echo $this->session->userdata('nama_rental') ?>" class="form-control" disabled>
+                        </div>
+
+                        <!-- <div class="form-group">
                             <label>AC</label>
                             <select name="ac" class="form-control">
                                 <option value="1">Tersedia</option>
@@ -72,28 +105,7 @@
                             </select>
                         </div>
 
-        			</div>
-        			<div class="col-md-6">
-
                         <div class="form-group">
-                            <label>Harga Sewa/Hari</label>
-                            <input type="number" name="harga" class="form-control">
-                            <?php echo form_error('harga','<div class="text-small text-danger">','</div>') ?>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Denda</label>
-                            <input type="number" name="denda" class="form-control">
-                            <?php echo form_error('denda','<div class="text-small text-danger">','</div>') ?>
-                        </div>
-
-        				<div class="form-group">
-        					<label>Tahun</label>
-        					<input type="text" name="tahun" class="form-control">
-        					<?php echo form_error('tahun','<div class="text-small text-danger">','</div>') ?>
-        				</div>
-
-        				<div class="form-group">
         					<label>Status</label>
         					<select name="status" class="form-control">
         						<option value="">--Pilih Status--</option>
@@ -101,12 +113,36 @@
         						<option value="0">Tidak Tersedia</option>
         					</select>
         					<?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
-        				</div>
-
-        				<div class="form-group">
-        					<label>Gambar</label>
-        					<input type="file" name="gambar" class="form-control">
-        				</div>
+        				</div> -->
+                        <div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="ac" class="form-check-input" value="0">AC
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="central_lock" class="form-check-input" value="0">Central Lock
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="mp3_player" class="form-check-input" value="0">MP3 Player
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="supir" class="form-check-input" value="0" >Supir
+  </label>
+</div>
+<div><br></div>
+<div class="form-check-inline">
+                                <label class="form-check-label">
+                                Status<br>
+                                    <input type="radio" class="form-check-input" name="status" value="1">Tersedia
+                                    <input type="radio" class="form-check-input" name="status" value="0" >Tidak Tersedia
+                                    </label>
+                                </div>
+                                <div><br></div>
 
         				<button type="submit" class="btn btn-primary">Simpan</button>
         				<button type="reset" class="btn btn-danger">Reset</button>

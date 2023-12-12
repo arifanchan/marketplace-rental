@@ -24,15 +24,27 @@
     		<input type="text" name="alamat" class="form-control" value="<?php echo $cs->alamat ?>">
     		<?php echo form_error('alamat','<span class="text-small text-danger">','</span>') ?>
     	</div>
-    	<div class="form-group">
+		<div class="form-check-inline">
+                        <label for="gender" class="form-check-label">
+                          Gender<br>
+                          <input type="radio" class="form-check-input" name="gender" value="Laki-laki" <?php if ($cs->gender == 'Laki-laki') {
+                                            echo "checked";
+                                        } ?>>Laki-laki
+                          <input type="radio" class="form-check-input" name="gender" value="Perempuan" <?php if ($cs->gender == 'Perempuan') {
+                                            echo "checked";
+                                        } ?>>Perempuan
+                        </label>
+    	<!-- <div class="form-group">
     		<label>Gender</label>
     		<select class="form-control" name="gender">
     			<option value="<?php echo $cs->gender ?>"><?php echo $cs->gender ?></option>
     			<option value="Laki-laki">Laki-laki</option>
     			<option value="Perempuan">Perempuan</option>
-    		</select>
+    		</select> -->
     		<?php echo form_error('gender','<span class="text-small text-danger">','</span>') ?>
     	</div>
+		<div></div>
+		<br><br>
     	<div class="form-group">
     		<label>No. Telepon</label>
     		<input type="text" name="no_telepon" class="form-control" value="<?php echo $cs->no_telp ?>">

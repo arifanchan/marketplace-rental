@@ -1,6 +1,12 @@
 <?php
 	
 	class Data_mobil extends CI_Controller{
+		public function __construct() {
+			parent::__construct();
+			if ($this->session->userdata('role_id') == '3') {
+				redirect('rental/dashboard');
+			}
+		}
 		public function index(){
 
 			$data['mobil'] = $this->rental_model->get_data('mobil')->result();

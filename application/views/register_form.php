@@ -9,7 +9,9 @@
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Register</h4></div>
+              <div class="card-header">
+                <h4>Register</h4>
+              </div>
 
               <div class="card-body">
                 <form method="POST" action="<?php echo base_url('register') ?>">
@@ -17,50 +19,61 @@
                     <div class="form-group col-6">
                       <label for="nama">Nama</label>
                       <input id="nama" type="text" class="form-control" name="nama" autofocus>
-                      <?php echo form_error('nama', '<div class="text-small text-danger">','</div>') ?>
+                      <?php echo form_error('nama', '<div class="text-small text-danger">', '</div>') ?>
                     </div>
                     <div class="form-group col-6">
                       <label for="username">Username</label>
                       <input id="username" type="text" class="form-control" name="username">
-                      <?php echo form_error('username', '<div class="text-small text-danger">','</div>') ?>
+                      <?php echo form_error('username', '<div class="text-small text-danger">', '</div>') ?>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <input id="alamat" type="text" class="form-control" name="alamat">
-                    <?php echo form_error('alamat', '<div class="text-small text-danger">','</div>') ?>
+                    <?php echo form_error('alamat', '<div class="text-small text-danger">', '</div>') ?>
                     <div class="invalid-feedback">
                     </div>
                   </div>
-
                   <div class="row">
                     <div class="form-group col-6">
-                      <label for="gender" class="d-block">Gender</label>
+                      <label for="no_telp" class="d-block">No. Telepon</label>
+                      <input id="no_telp" type="text" class="form-control" name="no_telp">
+                      <?php echo form_error('no_telp', '<div class="text-small text-danger">', '</div>') ?>
+                    </div>
+                    <div class="form-group col-6">
+                      <label for="no_ktp" class="d-block">No. KTP</label>
+                      <input type="text" name="no_ktp" class="form-control">
+                      <?php echo form_error('no_ktp', '<div class="text-small text-danger">', '</div>') ?>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <div class="form-check-inline">
+                        <label for="gender" class="form-check-label">
+                          Gender<br><br>
+                          <input type="radio" class="form-check-input" name="gender" value="Laki-laki">Laki-laki
+                          <input type="radio" class="form-check-input" name="gender" value="Perempuan">Perempuan
+                        </label>
+                      </div>
+                      <!-- <label for="gender" class="d-block">Gender</label>
                       <select class="form-control" name="gender">
                         <option value="">-- Pilih gender --</option>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Perempuan">Perempuan</option>
-                      </select>
-                      <?php echo form_error('gender', '<div class="text-small text-danger">','</div>') ?>
-                      </div>
-                    <div class="form-group col-6">
-                      <label for="no_telp" class="d-block">No. Telepon</label>
-                      <input id="no_telp" type="text" class="form-control" name="no_telp">
-                      <?php echo form_error('no_telp', '<div class="text-small text-danger">','</div>') ?>
-                    </div>
-                    </div>
-                  <div class="row">
-                    <div class="form-group col-6">
-                      <label>No. KTP</label>
-                      <input type="text" name="no_ktp" class="form-control">
-                      <?php echo form_error('no_ktp', '<div class="text-small text-danger">','</div>') ?>
+                      </select> -->
+                      <?php echo form_error('gender', '<div class="text-small text-danger">', '</div>') ?>
                     </div>
                     <div class="form-group col-6">
                       <label>Password</label>
                       <input type="password" name="password" class="form-control">
-                      <?php echo form_error('password', '<div class="text-small text-danger">','</div>') ?>
+                      <?php echo form_error('password', '<div class="text-small text-danger">', '</div>') ?>
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" id="nama_rental">
+                    <label for="nama_rental">Anda pemilik rental? Daftarkan usaha Anda</label>
+                    <input id="nama_rental" type="text" class="form-control" name="nama_rental" disabled>
                   </div>
 
                   <div class="form-group">
@@ -71,6 +84,9 @@
                 </form>
               </div>
             </div>
+            <div class="mt-5 text-muted text-center">
+              Sudah memiliki akun? <a href="<?php echo base_url('auth/login') ?>">Login</a>
+            </div>
             <div class="simple-footer">
               Copyright &copy; Stisla 2018
             </div>
@@ -79,3 +95,22 @@
       </div>
     </section>
   </div>
+  <script>
+    function enableNextTextBox() {
+      let textBox = [... this.parentNode.querySelectorAll('[type="text"]')][0];
+      if (textBox) {
+        if (this.checked) {
+          textBox.removeAttribute("disabled");
+        }
+        else {
+          textBox.setAttribute("disabled", "");
+        }
+      }
+    }
+
+    let checkboxes = [...document.querySelectorAll('[type="checkbox"]')];
+
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('click', enableNextTextBox);
+    });
+  </script>

@@ -22,15 +22,24 @@
     		<input type="text" name="alamat" class="form-control">
     		<?php echo form_error('alamat','<span class="text-small text-danger">','</span>') ?>
     	</div>
-    	<div class="form-group">
+		<div class="form-check-inline">
+                        <label for="gender" class="form-check-label">
+                          Gender<br>
+                          <input type="radio" class="form-check-input" name="gender" value="Laki-laki">Laki-laki
+                          <input type="radio" class="form-check-input" name="gender" value="Perempuan">Perempuan
+                        </label>
+                      <!-- </div> -->
+    	<!-- <div class="form-group">
     		<label>Gender</label>
     		<select class="form-control" name="gender">
     			<option value="">-- Pilih Gender --</option>
     			<option value="Laki-laki">Laki-laki</option>
     			<option value="Perempuan">Perempuan</option>
-    		</select>
+    		</select> -->
     		<?php echo form_error('gender','<span class="text-small text-danger">','</span>') ?>
     	</div>
+		<div></div>
+		<br><br>
     	<div class="form-group">
     		<label>No. Telepon</label>
     		<input type="text" name="no_telepon" class="form-control">

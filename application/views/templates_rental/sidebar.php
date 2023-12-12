@@ -24,10 +24,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">RENTAL PANEL</a>
+            <a href="dashboard">RENTAL PANEL</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">RP</a>
+            <a href="dashboard">RP</a>
           </div>
           <ul class="sidebar-menu">
 

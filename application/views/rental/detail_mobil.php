@@ -24,10 +24,16 @@
                                         <?php 
                                             if($dt->kode_type == "SDN"){
                                                 echo "Sedan";
-                                            }elseif($dt->kode_type == "HTB"){
+                                            }elseif($dt->kode_type == "HB"){
                                                 echo "Hatchback";
                                             }elseif($dt->kode_type == "MPV"){
                                                 echo "Multi Purpose Vehicle";
+                                            }elseif($dt->kode_type == "SUV"){
+                                                echo "Sport Utility Vehicle";
+                                            }elseif($dt->kode_type == "PUS"){
+                                                echo "Pick-Up Single Cabin";
+                                            }elseif($dt->kode_type == "PUD"){
+                                                echo "Pick-Up Double Cabin";
                                             }else{
                                                 echo "<span class='text-danger'> Tipe mobil belum terdaftar </span>";
                                             }

@@ -42,12 +42,17 @@
 
 					<div class="form-group">
 						<label>Tanggal Rental</label>
-						<input type="date" name="tanggal_rental" class="form-control">
+						<input type="date" id="txtDate" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>" name="tanggal_rental" class="form-control">
 					</div>
+
+					<!-- <div class="form-group">
+						<label>Lama rental</label>
+						<input type="number" id="scrollView" max="7" min="1" value="1" name="durasi" class="form-control">
+					</div> -->
 
 					<div class="form-group">
 						<label>Tanggal Kembali</label>
-						<input type="date" name="tanggal_kembali" class="form-control">
+						<input type="date" id="txtDate" min="<?php echo date('Y-m-d', strtotime('+1 days'));?>" name="tanggal_kembali" class="form-control">
 					</div>
 
 					<?php if($dt->status == '1') { ?>

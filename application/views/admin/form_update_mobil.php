@@ -42,22 +42,76 @@
         					<?php echo form_error('warna','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
+        				<div class="form-group">
+        					<label>Gambar</label>
+        					<input type="file" name="gambar" class="form-control">
+        				</div>
+                        
+
+                        <!-- <div class="form-group">
+                            <label>AC</label>
+                            <select name="ac" class="form-control">
+                                <option <?php if($mb->ac == 1){echo "selected='selected'";}
+                                    echo $mb->ac;?> value="1">Tersedia</option>
+
+                                <option <?php if($mb->ac == 0){echo "selected='selected'";}
+                                    echo $mb->ac;?> value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('ac','<div class="text-small text-danger">','</div>') ?>
+                        </div>
 
                         <div class="form-group">
-                            <label>Status</label>
-                            <select name="status" class="form-control">
-                                <option <?php if($mb->status == 1){echo "selected='selected'";}
-                                    echo $mb->status;?> value="1">Tersedia</option>
+                            <label>Supir</label>
+                            <select name="supir" class="form-control">
+                                <option <?php if($mb->supir == 1){echo "selected='selected'";}
+                                    echo $mb->supir;?> value="1">Tersedia</option>
 
-                                <option <?php if($mb->status == 0){echo "selected='selected'";}
-                                    echo $mb->status;?> value="0">Tidak Tersedia</option>
+                                <option <?php if($mb->supir == 0){echo "selected='selected'";}
+                                    echo $mb->supir;?> value="0">Tidak Tersedia</option>
                             </select>
-                            <?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
+                            <?php echo form_error('supir','<div class="text-small text-danger">','</div>') ?>
                         </div>
+
+
+                        <div class="form-group">
+                            <label>MP3 Player</label>
+                            <select name="mp3_player" class="form-control">
+                                <option <?php if($mb->mp3_player == 1){echo "selected='selected'";}
+                                    echo $mb->mp3_player;?> value="1">Tersedia</option>
+
+                                <option <?php if($mb->mp3_player == 0){echo "selected='selected'";}
+                                    echo $mb->mp3_player;?> value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('mp3_player','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Central Lock</label>
+                            <select name="central_lock" class="form-control">
+                                <option <?php if($mb->central_lock == 1){echo "selected='selected'";}
+                                    echo $mb->central_lock;?> value="1">Tersedia</option>
+
+                                <option <?php if($mb->central_lock == 0){echo "selected='selected'";}
+                                    echo $mb->central_lock;?> value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('central_lock','<div class="text-small text-danger">','</div>') ?>
+                        </div> -->
+
 
         			</div>
         			<div class="col-md-6">
 
+                        <div class="form-group">
+                            <label>Harga</label>
+                            <input type="text" name="harga" class="form-control" value="<?php echo $mb->harga ?>">
+                            <?php echo form_error('harga','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label>denda</label>
+                            <input type="text" name="denda" class="form-control" value="<?php echo $mb->denda ?>">
+                            <?php echo form_error('denda','<div class="text-small text-danger">','</div>') ?>
+                        </div>
 
         				<div class="form-group">
         					<label>Tahun</label>
@@ -65,7 +119,7 @@
         					<?php echo form_error('tahun','<div class="text-small text-danger">','</div>') ?>
         				</div>
 
-        				<div class="form-group">
+        				<!-- <div class="form-group">
         					<label>Status</label>
         					<select name="status" class="form-control">
         						<option <?php if($mb->status == 1){echo "selected='selected'";}
@@ -75,13 +129,56 @@
         							echo $mb->status;?> value="0">Tidak Tersedia</option>
         					</select>
         					<?php echo form_error('status','<div class="text-small text-danger">','</div>') ?>
-        				</div>
+        				</div> -->
 
-        				<div class="form-group">
-        					<label>Gambar</label>
-        					<input type="file" name="gambar" class="form-control">
-        				</div>
+                        <div class="form-group">
+                            <label>Pemilik Rental</label>
+                            <select name="nama_rental" class="form-control">
+                                <option value="<?php echo $mb->nama_rental?>"><?php echo $mb->nama_rental?></option>
+                                <?php foreach ($nama_rental as $nr) :?>
+                                    <?php if($mb->nama_rental != $nr->nama_rental) { ?>
+                                        <option value="<?php echo $nr->nama_rental?>"><?php echo $nr->nama_rental?></option>
+                                    <?php }else{?>
+                                    <?php } ?>
+                                <?php endforeach ?>
 
+                            </select>
+                            <?php echo form_error('nama_rental','<div class="text-small text-danger">','</div>') ?>
+                        </div>
+
+                        <div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="ac" class="form-check-input" value="1" <?php if($mb->ac == 1){echo "checked";}?>>AC
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="central_lock" class="form-check-input" value="1" <?php if($mb->central_lock == 1){echo "checked";}?>>Central Lock
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="mp3_player" class="form-check-input" value="1" <?php if($mb->mp3_player == 1){echo "checked";}?>>MP3 Player
+  </label>
+</div>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" name="supir" class="form-check-input" value="1" <?php if($mb->supir == 1){echo "checked";}?>>Supir
+  </label>
+</div>
+<div><br></div>
+                        <div class="form-check-inline">
+                                <label class="form-check-label">
+                                Status<br>
+                                    <input type="radio" class="form-check-input" name="status" value="1" <?php if ($mb->status == 1) {
+                                            echo "checked";
+                                        } ?>>Tersedia
+                                        <input type="radio" class="form-check-input" name="status" value="0" <?php if ($mb->status == 0) {
+                                            echo "checked";
+                                        } ?>>Tidak Tersedia
+                                    </label>
+                                </div>
+                                <div><br></div>
         				<button type="submit" class="btn btn-primary">Simpan</button>
         				<button type="reset" class="btn btn-danger">Reset</button>
         			</div>

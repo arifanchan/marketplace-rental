@@ -24,10 +24,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">ADMIN PANEL</a>
+            <a href="dashboard">ADMIN PANEL</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">AP</a>
+            <a href="dashboard">AP</a>
           </div>
           <ul class="sidebar-menu">
 

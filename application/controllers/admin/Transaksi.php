@@ -91,7 +91,7 @@
 			$y						= strtotime($tanggal_kembali);
 			$selisih				= abs($x - $y)/(60*60*24);
 			$total_denda			= $selisih * $denda;
-			
+			if($x < $y) { $total_denda = 0;}
 
 			$data = array(
 				'tanggal_pengembalian'	=> $tanggal_pengembalian,
